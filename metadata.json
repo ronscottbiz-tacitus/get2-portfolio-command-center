@@ -1,0 +1,6 @@
+{
+  "name": "Lyft Project Specialist Apprenticeship Command Center",
+  "description": "An interactive digital portfolio and chatbot command center showcasing Ron Scott's metrics, core competencies, accomplishments, and progress as a C&B Project Specialist Apprentice at Lyft.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
