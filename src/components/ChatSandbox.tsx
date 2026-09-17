@@ -14,10 +14,10 @@ interface ChatSandboxProps {
 }
 
 const SUGGESTED_QUERIES = [
-  { label: "Show Exceeding Outcomes", query: "What is Ron's performance rating and status?" },
-  { label: "Verify Google Certifications", query: "What professional certifications do you hold?" },
-  { label: "Audit Live Project Status", query: "What is the project timeline and completed milestones?" },
-  { label: "Analyze Strategic Growth", query: "What are Ron's key development and growth areas?" }
+  { label: "Walk through the Get2 projects", query: "What are the Get2 projects and what did you build in each?" },
+  { label: "Ask about the Lyft apprenticeship", query: "Tell me about your AI Transformation Lead apprenticeship at Lyft." },
+  { label: "See skills & certifications", query: "What are your core skills and certifications?" },
+  { label: "How to get in touch", query: "How can I get in touch with Ron?" }
 ];
 
 export default function ChatSandbox({ preloadedPrompt, onClearPreloadedPrompt }: ChatSandboxProps) {
@@ -25,7 +25,7 @@ export default function ChatSandbox({ preloadedPrompt, onClearPreloadedPrompt }:
     {
       id: 'welcome',
       role: 'model',
-      text: "Let's cut through the static resume. This interactive workspace is natively grounded in my corporate project plans, performance evaluations, and program charters. Ask me anything to instantly audit my cross-functional velocity, test my data accuracy metrics, or explore how I bridge UX design with program management.",
+      text: "Hey — I'm here to help you get to know Ron's work. Ask me anything about the Get2 projects, his time at Lyft, his skills, or his background as a builder. This chat is grounded in his real project data and resume history, so I'll stick to what's actually true rather than guessing.",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -44,22 +44,10 @@ export default function ChatSandbox({ preloadedPrompt, onClearPreloadedPrompt }:
     scrollToBottom();
   }, [messages, isLoading]);
 
-  // Handle outside activation from Competency Popups
+  // Handle activation from a Project card's "Ask the Chatbot" button
   useEffect(() => {
     if (preloadedPrompt) {
-      let queryText = "";
-      if (preloadedPrompt === "Accountability") {
-        queryText = "Describe Ron's Accountability achievements at Lyft, particularly the digital badge program logic mapping.";
-      } else if (preloadedPrompt === "Excellence & Growth") {
-        queryText = "How did Ron show Excellence & Growth? Tell me about nomination vetting models and certifications.";
-      } else if (preloadedPrompt === "Customer Focus") {
-        queryText = "Give details about Ron's Customer Focus, specifically user paths, mockups, and metadata taxomy.";
-      } else if (preloadedPrompt === "Collaboration & Inclusion") {
-        queryText = "Detail Ron's Collaboration & Inclusion indicators, stakeholder alignment, and Slack C&B briefs.";
-      } else {
-        queryText = `How does Ron Scott demonstrate his core pillar in ${preloadedPrompt}?`;
-      }
-      
+      const queryText = `Tell me more about the ${preloadedPrompt} project — what it does and how it was built.`;
       onClearPreloadedPrompt();
       triggerSendMessage(queryText);
     }
@@ -156,12 +144,12 @@ export default function ChatSandbox({ preloadedPrompt, onClearPreloadedPrompt }:
   };
 
   const handleClearHistory = () => {
-    if (confirm("Are you sure you want to clear your conversation history with the Command Core?")) {
+    if (confirm("Clear this conversation?")) {
       setMessages([
         {
           id: 'welcome',
           role: 'model',
-          text: "Let's cut through the static resume. This interactive workspace is natively grounded in my corporate project plans, performance evaluations, and program charters. Ask me anything to instantly audit my cross-functional velocity, test my data accuracy metrics, or explore how I bridge UX design with program management.",
+          text: "Hey — I'm here to help you get to know Ron's work. Ask me anything about the Get2 projects, his time at Lyft, his skills, or his background as a builder. This chat is grounded in his real project data and resume history, so I'll stick to what's actually true rather than guessing.",
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }
       ]);
@@ -169,24 +157,24 @@ export default function ChatSandbox({ preloadedPrompt, onClearPreloadedPrompt }:
   };
 
   return (
-    <div className="rounded-3xl border border-white/10 backdrop-blur-2xl bg-white/5 shadow-inner shadow-2xl flex flex-col h-[520px] overflow-hidden">
+    <div className="rounded-xl flex flex-col h-[500px] overflow-hidden" style={{ background: '#0c0d10', border: '1px solid rgba(255,255,255,0.08)' }}>
       
       {/* Sandbox Header */}
-      <div className="px-6 py-5 border-b border-white/10 bg-white/5 flex items-center justify-between">
+      <div className="px-6 py-4 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <div className="flex items-center gap-2.5">
           {/* Pulsing indicator core */}
           <div className="relative">
             <span className="flex h-3.5 w-3.5 items-center justify-center">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-500 opacity-60" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-60" style={{ background: '#0052FF' }} />
+              <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#0052FF' }} />
             </span>
           </div>
           <div>
             <span className="font-display font-bold text-sm tracking-wide text-white">
-              AI Portfolio Intelligence Hub
+              Ask About Ron's Work
             </span>
             <span className="block text-[10px] font-mono text-slate-400">
-              Powered by Gemini 3.5 &bull; Grounded in Verified Execution Data
+              Grounded in real project and resume data
             </span>
           </div>
         </div>
@@ -202,7 +190,7 @@ export default function ChatSandbox({ preloadedPrompt, onClearPreloadedPrompt }:
       </div>
 
       {/* Message Output Thread */}
-      <div className="flex-1 overflow-y-auto px-6 py-5 space-y-4 bg-slate-950/20">
+      <div className="flex-1 overflow-y-auto px-6 py-5 space-y-4" style={{ background: '#050506' }}>
         {messages.map((message) => {
           const isUser = message.role === 'user';
           return (
@@ -302,7 +290,7 @@ export default function ChatSandbox({ preloadedPrompt, onClearPreloadedPrompt }:
       </div>
 
       {/* Suggested Queries Chips */}
-      <div className="px-6 py-4 border-t border-white/10 bg-white/5 flex flex-wrap gap-2.5 items-center">
+      <div className="px-6 py-4 flex flex-wrap gap-2.5 items-center" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <span className="text-[10px] uppercase tracking-wider font-mono text-slate-400 inline-flex items-center gap-1.5 shrink-0 font-bold">
           <HelpCircle className="h-3.5 w-3.5 text-slate-400" />
           Suggested:
@@ -322,14 +310,15 @@ export default function ChatSandbox({ preloadedPrompt, onClearPreloadedPrompt }:
       </div>
 
       {/* Input Form Field */}
-      <form onSubmit={handleFormSubmit} className="px-6 py-4 border-t border-white/10 bg-white/5 flex items-center gap-3.5">
+      <form onSubmit={handleFormSubmit} className="px-6 py-4 flex items-center gap-3.5" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <input
           type="text"
           value={inputVal}
           onChange={(e) => setInputVal(e.target.value)}
-          placeholder={isLoading ? "Re-aligning model context matrices..." : "Challenge the AI with a question about Ron's execution history..."}
+          placeholder={isLoading ? "Thinking..." : "Ask about a project, a role, or a skill..."}
           disabled={isLoading}
-          className="flex-1 rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#0052FF]/40 focus:ring-1 focus:ring-[#0052FF]/10 transition-all font-sans outline-none"
+          className="flex-1 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-400 focus:outline-none focus:border-[#0052FF]/40 focus:ring-1 focus:ring-[#0052FF]/10 transition-all font-sans outline-none"
+          style={{ background: '#050506', border: '1px solid rgba(255,255,255,0.08)' }}
         />
         <button
           type="submit"
