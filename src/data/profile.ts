@@ -3,8 +3,6 @@
 // against live project data in projects.ts. Direct contact info intentionally
 // omitted — see grounding.ts for chatbot contact-handling instructions.
 
-import { GET2_PROJECTS } from './projects';
-
 export interface ProfileInfo {
   name: string;
   role: string;
@@ -32,7 +30,7 @@ export const PROFILE_INFO: ProfileInfo = {
   role: 'Designer, Builder & AI-Native Product Practitioner',
   location: 'Oakland, CA / San Francisco Bay Area',
   bio:
-    "I'm a designer, builder, and AI practitioner based in Oakland, CA. I build things — always have. I came home in 2023 after 27 years away, with two Associate degrees earned along the way, a handful of certifications, and years spent mentoring other students. Since then, I've built a portfolio of consumer apps from zero, spoken at Figma's global headquarters, earned four Google Professional Certificates, completed a U.S. Department of Labor Registered Apprenticeship, and run AI-enabled programs at enterprise scale at Lyft. Get2 — the company I founded — is built on the premise that what you're obligated to do can become what you get to do.",
+    "I'm a designer, builder, and AI practitioner based in Oakland, CA. I build things — always have. I spent 27 years incarcerated and didn't waste them: two Associate degrees with honors, certifications, and years of mentoring other students. I came home in 2023, built a portfolio of consumer apps from zero, spoke at Figma's global headquarters, earned four Google Professional Certificates, completed a U.S. Department of Labor Registered Apprenticeship, and ran AI-enabled programs at enterprise scale at Lyft. Get2 — the company I founded — is built on the premise that what you're obligated to do can become what you get to do.",
 };
 
 export const EXPERIENCE: ExperienceEntry[] = [
@@ -57,7 +55,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
     summary:
       'Founded and operate the Get2 product family solo — full 0-to-1 ownership of design, front-end development, and product decisions across every project (see projects.ts).',
     highlights: [
-      `Shipped ${GET2_PROJECTS.length} consumer products spanning games, civic tech, retail tech, and social apps — from live launches to early-stage concepts`,
+      'Shipped 7 live/prototype consumer products spanning games, civic tech, retail tech, and social apps',
       'Built the Get2 brand identity, motion system, and visual language from scratch',
       'Uses AI-native tools (Claude, Gemini, Morph, Emergent, Canva) as daily building instruments',
     ],

@@ -12,6 +12,7 @@ export interface Get2Project {
   githubRepo?: string; // owner/repo
   caseStudyUrl?: string; // full written case study, e.g. get2.one/work/[slug]
   imageUrl?: string; // screenshot shown on the project card, from /public/projects/
+  videoUrl?: string; // looping muted video shown in place of imageUrl, from /public/projects/ (takes priority over imageUrl when present)
   domain: string; // shown in the browser-chrome address bar (real domain, or a status label)
   accent: string; // per-project accent hex, used for the chrome dot / borders / highlight ticks
   note?: string; // authenticity/framing caveat surfaced verbatim to the chatbot and UI
@@ -65,6 +66,7 @@ export const GET2_PROJECTS: Get2Project[] = [
   {
     id: 'get2puzzle',
     imageUrl: '/projects/get2puzzle.jpg',
+    videoUrl: '/projects/get2puzzle.mp4',
     name: 'Get2Puzzle',
     tagline: 'A rotatable jigsaw puzzle app — Classic and Live (video) modes',
     category: 'Games / Product',
@@ -125,6 +127,7 @@ export const GET2_PROJECTS: Get2Project[] = [
   },
   {
     id: '3ceipt',
+    imageUrl: '/projects/3ceipt.jpg',
     name: '3Ceipt!',
     tagline: 'A UX case study in receipt scanning and management',
     category: 'UX Case Study / Mobile',
@@ -162,16 +165,17 @@ export const GET2_PROJECTS: Get2Project[] = [
     techStack: ['Framer'],
   },
   {
-    id: 'nice-horn',
-    name: 'Nice Horn',
-    tagline: 'A concept for a "courtesy horn" for cars',
+    id: 'beepboop',
+    imageUrl: '/projects/beepboop.jpg',
+    name: 'BeepBoop!',
+    tagline: 'A concept for a pleasant, courteous alternative to the car horn',
     category: 'Hardware / Embedded (Concept)',
     status: 'Concept',
     domain: 'concept — unreleased',
     accent: '#F59E0B',
-    note: 'Concept-stage only — no hardware has been built yet. Any accompanying video is an AI-generated concept visualization (Veo), not footage of a working device. Should always be framed to hiring managers as an idea in development, not a shipped or prototyped product.',
+    note: 'Concept-stage only — no hardware has been built yet. The accompanying image is an AI-generated comic-style illustration created to visualize the idea, not a photo or footage of a real device. Should always be framed to hiring managers as an idea in development, not a shipped or prototyped product.',
     description:
-      'An idea for an auxiliary "courtesy horn" — a secondary, pleasant-sounding car horn (short chirps and chords) for everyday communication like acknowledgment or thanks, distinct from the harsh emergency horn. Developed through a structured concept-development process: problem framing, hardware feasibility research, an ESP32-based technical architecture, a bill-of-materials cost estimate (~$28/unit), competitive landscape analysis, and draft firmware logic.',
+      'An idea for an auxiliary "courtesy horn" — a secondary, pleasant-sounding car horn (short chirps and chords) for everyday communication like acknowledgment or thanks, distinct from the harsh emergency horn. Inspired by a real moment of wanting to say "thank you" at a 4-way intersection without the aggressive connotation of a standard horn. Developed through a structured concept-development process: problem framing, hardware feasibility research, an ESP32-based technical architecture, a bill-of-materials cost estimate (~$28/unit), competitive landscape analysis, and draft firmware logic.',
     highlights: [
       'Worked through real hardware constraints (why factory horns can\'t be reprogrammed, why EV exterior speakers are legally restricted from custom sounds post-Tesla "Boombox")',
       'Landed on an ESP32 + Class D amp + wireless RF trigger architecture, with a sketched firmware control loop for tap/double-tap/long-press gestures',

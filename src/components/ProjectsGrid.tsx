@@ -75,7 +75,17 @@ export default function ProjectsGrid({ onSelectProjectForChat }: ProjectsGridPro
           >
             <BrowserChrome accent={p.accent} domain={p.domain} chromeStyle={p.chromeStyle} />
 
-            {p.imageUrl ? (
+            {p.videoUrl ? (
+              <video
+                className="aspect-video w-full border-b border-white/8 object-cover"
+                style={{ objectPosition: 'top' }}
+                src={p.videoUrl}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            ) : p.imageUrl ? (
               <div
                 className="aspect-video border-b border-white/8"
                 style={{ backgroundImage: `url(${p.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'top' }}
@@ -143,12 +153,22 @@ export default function ProjectsGrid({ onSelectProjectForChat }: ProjectsGridPro
           >
             <BrowserChrome accent={selected.accent} domain={selected.domain} chromeStyle="solid" onClose={() => setSelectedId(null)} />
 
-            {selected.imageUrl && (
+            {selected.videoUrl ? (
+              <video
+                className="aspect-video w-full border-b border-white/8 object-cover"
+                style={{ objectPosition: 'top' }}
+                src={selected.videoUrl}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            ) : selected.imageUrl ? (
               <div
                 className="aspect-video border-b border-white/8"
                 style={{ backgroundImage: `url(${selected.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'top' }}
               />
-            )}
+            ) : null}
 
             <div className="p-[22px]">
               <div className="flex items-center gap-2.5 flex-wrap">
