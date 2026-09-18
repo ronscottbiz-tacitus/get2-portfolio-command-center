@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import KPICards from './components/KPICards';
 import ProjectsGrid from './components/ProjectsGrid';
 import ProjectTimeline from './components/ProjectTimeline';
 import ChatSandbox from './components/ChatSandbox';
@@ -63,7 +62,7 @@ export default function App() {
               <span className="block uppercase" style={{ fontFamily: mono, fontSize: 10, fontWeight: 600, color: '#6C93FF', letterSpacing: '0.1em', lineHeight: 1 }}>
                 Portfolio
               </span>
-              <span className="block" style={{ fontFamily: mono, fontSize: 10, color: '#5B6069', lineHeight: 1, marginTop: 2 }}>
+              <span className="block" style={{ fontFamily: mono, fontSize: 10, color: '#7B818C', lineHeight: 1, marginTop: 2 }}>
                 {PROFILE_INFO.name}
               </span>
             </div>
@@ -98,14 +97,11 @@ export default function App() {
         </div>
       </nav>
 
-      <Header />
-
-      <section className="px-5 pb-11">
-        <div className="max-w-[1200px] mx-auto">
-          <SectionLabel>At a Glance</SectionLabel>
-          <KPICards />
+      <Header>
+        <div id="chat-section" className="flex-1 min-w-[320px] max-w-[460px] scroll-mt-4">
+          <ChatSandbox preloadedPrompt={projectTrigger} onClearPreloadedPrompt={() => setProjectTrigger(null)} />
         </div>
-      </section>
+      </Header>
 
       <section className="px-5 pb-11">
         <div className="max-w-[1200px] mx-auto">
@@ -114,23 +110,16 @@ export default function App() {
         </div>
       </section>
 
-      <section className="px-5 pb-11">
+      <section className="px-5 pb-16">
         <div className="max-w-[1200px] mx-auto">
           <SectionLabel>Experience &amp; Credentials</SectionLabel>
           <ProjectTimeline />
         </div>
       </section>
 
-      <section id="chat-section" className="px-5 pb-16 scroll-mt-4">
-        <div className="max-w-[1200px] mx-auto">
-          <SectionLabel>Ask About Ron</SectionLabel>
-          <ChatSandbox preloadedPrompt={projectTrigger} onClearPreloadedPrompt={() => setProjectTrigger(null)} />
-        </div>
-      </section>
-
       <footer
         className="text-center pt-8 pb-10"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.08)', fontFamily: mono, fontSize: 10, color: '#5B6069' }}
+        style={{ borderTop: '1px solid rgba(255,255,255,0.08)', fontFamily: mono, fontSize: 10, color: '#7B818C' }}
       >
         <p style={{ margin: 0 }}>{PROFILE_INFO.name} | Portfolio</p>
         <p style={{ margin: '4px 0 0' }}>&copy; 2026 {PROFILE_INFO.name}.</p>
@@ -180,7 +169,7 @@ export default function App() {
             <div className="p-7">
               <h2 style={{ fontFamily: display, fontWeight: 900, fontSize: 26, color: '#fff', margin: 0 }}>{PROFILE_INFO.name}</h2>
               <p style={{ fontFamily: mono, fontSize: 12, color: '#6C93FF', margin: '6px 0 0' }}>{PROFILE_INFO.role}</p>
-              <p style={{ fontFamily: mono, fontSize: 11, color: '#5B6069', margin: '2px 0 0' }}>{PROFILE_INFO.location}</p>
+              <p style={{ fontFamily: mono, fontSize: 11, color: '#7B818C', margin: '2px 0 0' }}>{PROFILE_INFO.location}</p>
               <div className="flex flex-wrap gap-3 mt-2" style={{ fontFamily: mono, fontSize: 11, color: '#6C93FF' }}>
                 <a href="https://portfolio.get2.one" target="_blank" rel="noopener noreferrer">portfolio.get2.one</a>
                 <a href="https://rscott.framer.ai" target="_blank" rel="noopener noreferrer">rscott.framer.ai</a>
@@ -205,7 +194,7 @@ export default function App() {
                       <h4 style={{ fontWeight: 700, fontSize: 13, color: '#fff', margin: 0 }}>
                         {exp.org} &bull; {exp.title}
                       </h4>
-                      <span style={{ fontFamily: mono, fontSize: 11, color: '#5B6069' }}>{exp.timeline}</span>
+                      <span style={{ fontFamily: mono, fontSize: 11, color: '#7B818C' }}>{exp.timeline}</span>
                     </div>
                     <p style={{ fontSize: 11.5, color: '#8A8F98', margin: '4px 0 0', lineHeight: 1.6 }}>{exp.summary}</p>
                     {exp.highlights.length > 0 && (

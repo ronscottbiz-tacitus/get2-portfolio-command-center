@@ -45,7 +45,7 @@ function BrowserChrome({ accent, domain, chromeStyle, onClose }: { accent: strin
       <span className="h-[7px] w-[7px] rounded-full bg-white/15" />
       <span
         className="flex-1 text-center truncate"
-        style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: '#5B6069', letterSpacing: '0.03em' }}
+        style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, color: '#7B818C', letterSpacing: '0.03em' }}
       >
         {domain}
       </span>
@@ -132,7 +132,7 @@ export default function ProjectsGrid({ onSelectProjectForChat }: ProjectsGridPro
                 {p.category}
               </span>
               <div className="flex items-center justify-between mt-4 pt-3.5 border-t border-white/8">
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, color: '#5B6069' }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, color: '#7B818C' }}>
                   {p.highlightCountLabel}
                 </span>
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, fontWeight: 700, color: p.accent }}>
@@ -185,7 +185,7 @@ export default function ProjectsGrid({ onSelectProjectForChat }: ProjectsGridPro
                   {selected.status}
                 </span>
               </div>
-              <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#5B6069', margin: '6px 0 18px' }}>
+              <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#7B818C', margin: '6px 0 18px' }}>
                 {selected.category}
               </p>
               <p style={{ fontSize: 13.5, lineHeight: 1.7, color: '#C7CAD1', margin: 0 }}>{selected.description}</p>

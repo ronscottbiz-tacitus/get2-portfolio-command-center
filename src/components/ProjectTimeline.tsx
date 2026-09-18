@@ -8,7 +8,7 @@ export default function ProjectTimeline() {
         <h3 style={{ fontFamily: "'Archivo Expanded', sans-serif", fontWeight: 800, fontSize: 14, color: '#fff', margin: '0 0 4px' }}>
           Certifications & Education
         </h3>
-        <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, color: '#5B6069', margin: '0 0 18px' }}>
+        <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, color: '#7B818C', margin: '0 0 18px' }}>
           Validated credentials and academic background
         </p>
         <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
@@ -26,10 +26,10 @@ export default function ProjectTimeline() {
         <h3 style={{ fontFamily: "'Archivo Expanded', sans-serif", fontWeight: 800, fontSize: 14, color: '#fff', margin: '0 0 4px' }}>
           Professional Experience
         </h3>
-        <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, color: '#5B6069', margin: '0 0 18px' }}>Roles, in order</p>
+        <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10.5, color: '#7B818C', margin: '0 0 18px' }}>Roles, in order</p>
         {EXPERIENCE.map((exp, i) => (
           <div key={i} className="flex gap-5" style={{ padding: '16px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <span className="shrink-0" style={{ width: 90, fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#5B6069', paddingTop: 2 }}>
+            <span className="shrink-0" style={{ width: 90, fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: '#7B818C', paddingTop: 2 }}>
               {exp.timeline}
             </span>
             <div>
