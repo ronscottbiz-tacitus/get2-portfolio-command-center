@@ -220,8 +220,32 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
+    app.use(express.static(distPath, {
+      // Never let static middleware auto-serve index.html for directory
+      // requests — it must always go through the explicit no-cache route
+      // below, so browsers can't get stuck on a stale shell after a deploy.
+      index: false,
+      setHeaders: (res, filePath) => {
+        if (path.basename(filePath) === 'index.html') {
+          res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+        } else if (filePath.includes(`${path.sep}assets${path.sep}`)) {
+          // Vite's build output (assets/index-<hash>.js, .css) is content-hashed:
+          // the filename itself changes whenever the content does, so it's safe
+          // to cache these as long as possible.
+          res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        } else {
+          // Everything else (public/projects/*.jpg, *.mp4, etc.) keeps its
+          // original filename even when we swap the content — like we just
+          // did for beepboop.jpg and get2puzzle.mp4 — so these get a short
+          // cache window instead of long/immutable, so updates show up
+          // for returning visitors within an hour rather than being stuck
+          // indefinitely.
+          res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate');
+        }
+      },
+    }));
     app.get('*', (req, res) => {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }
