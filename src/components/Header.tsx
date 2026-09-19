@@ -11,7 +11,14 @@ export default function Header({ children }: { children?: React.ReactNode }) {
               className="h-[104px] w-[104px] shrink-0 rounded-[14px] overflow-hidden"
               style={{ background: '#0c0d10', border: '1px solid rgba(255,255,255,0.1)' }}
             >
-              <img src="/brand/profile.jpg" alt={PROFILE_INFO.name} className="h-full w-full object-cover" />
+              <video
+                src="/brand/profile-loop.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover"
+              />
             </div>
             <div>
               <span
