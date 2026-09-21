@@ -30,7 +30,7 @@ export const PROFILE_INFO: ProfileInfo = {
   role: 'Designer, Builder & AI-Native Product Practitioner',
   location: 'Oakland, CA / San Francisco Bay Area',
   bio:
-    "I'm a designer, builder, and AI practitioner based in Oakland, CA. I build things — always have. I spent 27 years incarcerated and didn't waste them: two Associate degrees with honors, certifications, and years of mentoring other students. I came home in 2023, built a portfolio of consumer apps from zero, spoke at Figma's global headquarters, earned four Google Professional Certificates, completed a U.S. Department of Labor Registered Apprenticeship, and ran AI-enabled programs at enterprise scale at Lyft. Get2 — the company I founded — is built on the premise that what you're obligated to do can become what you get to do.",
+    "I'm a designer, builder, and AI practitioner based in Oakland, CA. I build things — always have. I hold two Associate degrees with honors, several certifications, and years of experience mentoring students. Since 2023, I've built a portfolio of consumer apps from zero, spoken at Figma's global headquarters, earned four Google Professional Certificates, completed a U.S. Department of Labor Registered Apprenticeship, and run AI-enabled programs at enterprise scale at Lyft. Get2 — the company I founded — is built on the premise that what you're obligated to do can become what you get to do.",
 };
 
 export const EXPERIENCE: ExperienceEntry[] = [
