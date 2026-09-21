@@ -45,6 +45,7 @@ export const GET2_PROJECTS: Get2Project[] = [
   {
     id: 'bus-a-lead-pinochle',
     imageUrl: '/projects/bus-a-lead-pinochle.jpg',
+    videoUrl: '/projects/bus-a-lead-pinochle.mp4',
     name: "Bus' A Lead: Cutthroat Pinochle",
     tagline: 'Prison Rules cutthroat pinochle, reimagined for the web',
     category: 'Interactive Fiction / Card Games',
@@ -58,7 +59,8 @@ export const GET2_PROJECTS: Get2Project[] = [
       'An interactive web-based adaptation of California prison-style cutthroat pinochle, featuring character AI, a custom cutscene engine ("Yard Reels"), and reactive animations.',
     highlights: [
       'Current active entry in Emergent\'s "Builder Fest" contest (partnered with Kevin O\'Leary)',
-      'Built a custom cutscene engine ("Yard Reels") and reactive character animations from scratch',
+      '"Pick Your Hustler" — a 5-character roster (each a real face reimagined in GTA San Andreas-style art) with an Opponent Picker to hand-pick both AI rivals',
+      'Built a custom cutscene engine ("Yard Reels") with character-specific animations and a cooldown/priority throttling system, plus a "Play All" slideshow view',
       'Offered as a no-signup-required alternative to the contest voting flow',
     ],
     techStack: [],
