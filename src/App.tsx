@@ -19,7 +19,7 @@ function buildPlainTextResume(): string {
   const skills = Object.entries(SKILLS)
     .map(([category, items]) => `- ${category}: ${items.join(', ')}`)
     .join('\n');
-  return `${PROFILE_INFO.name}\n${PROFILE_INFO.role}\nportfolio.get2.one | rscott.framer.ai | get2.one | linkedin.com/in/ronaldscott\n\nWHO I AM\n${PROFILE_INFO.bio}\n\nPROFESSIONAL EXPERIENCE\n${experience}\n\nEDUCATION & CERTIFICATIONS\n${certs}\n\nSKILLS\n${skills}`;
+  return `${PROFILE_INFO.name}\n${PROFILE_INFO.role}\nportfolio.get2.one | get2.one | linkedin.com/in/ronaldscott\n\nWHO I AM\n${PROFILE_INFO.bio}\n\nPROFESSIONAL EXPERIENCE\n${experience}\n\nEDUCATION & CERTIFICATIONS\n${certs}\n\nSKILLS\n${skills}`;
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -76,13 +76,13 @@ export default function App() {
               Resume / CV
             </button>
             <a
-              href="https://rscott.framer.ai"
+              href="https://get2.one/work"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md"
               style={{ padding: '8px 14px', background: 'rgba(0,82,255,0.08)', border: '1px solid rgba(0,82,255,0.3)', color: '#6C93FF', fontSize: 12, fontWeight: 700 }}
             >
-              UX Portfolio
+              Case Studies
             </a>
             <a
               href="https://get2.one"
@@ -172,7 +172,6 @@ export default function App() {
               <p style={{ fontFamily: mono, fontSize: 11, color: '#7B818C', margin: '2px 0 0' }}>{PROFILE_INFO.location}</p>
               <div className="flex flex-wrap gap-3 mt-2" style={{ fontFamily: mono, fontSize: 11, color: '#6C93FF' }}>
                 <a href="https://portfolio.get2.one" target="_blank" rel="noopener noreferrer">portfolio.get2.one</a>
-                <a href="https://rscott.framer.ai" target="_blank" rel="noopener noreferrer">rscott.framer.ai</a>
                 <a href="https://get2.one" target="_blank" rel="noopener noreferrer">get2.one</a>
                 <a href="https://linkedin.com/in/ronaldscott" target="_blank" rel="noopener noreferrer">linkedin.com/in/ronaldscott</a>
               </div>
