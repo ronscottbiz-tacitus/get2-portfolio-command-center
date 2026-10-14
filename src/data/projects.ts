@@ -58,7 +58,7 @@ export const GET2_PROJECTS: Get2Project[] = [
     category: 'Civic Tech / Social Impact',
     status: 'Live',
     liveUrl: 'https://theboard.get2.one',
-    githubRepo: 'ronscottbiz-tacitus/BHP',
+    // githubRepo: 'ronscottbiz-tacitus/BHP', — hidden: repo is private/not ready to show
     caseStudyUrl: 'https://get2.one/work/theboard',
     domain: 'theboard.get2.one',
     accent: '#C9A227',
@@ -127,7 +127,7 @@ export const GET2_PROJECTS: Get2Project[] = [
     category: 'Retail Tech / B2B',
     status: 'Live',
     liveUrl: 'https://get2.life',
-    githubRepo: 'ronscottbiz-tacitus/gr727',
+    // githubRepo: 'ronscottbiz-tacitus/gr727', — hidden: repo is private/not ready to show
     caseStudyUrl: 'https://get2.one/work/grocerygo',
     domain: 'get2.life',
     accent: '#E23744',
