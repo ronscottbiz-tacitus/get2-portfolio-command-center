@@ -31,7 +31,7 @@ export const GET2_PROJECTS: Get2Project[] = [
     status: 'Live',
     liveUrl: 'https://share.get2.one',
     githubRepo: 'ronscottbiz-tacitus/get2Share',
-    // caseStudyUrl: 'https://get2.one/work/share', — add once the Framer case study page is published
+    caseStudyUrl: 'https://get2.one/work/share',
     domain: 'share.get2.one',
     accent: '#3D7BFF',
     note: 'Premium video effects (a bullet-time "matrix" shot and a swim-through-the-crowd shot) and video capture are planned "Next" features, not built yet — any imagery of them is an AI-generated concept. Payments/paid tiers are also not built yet. The photos shown in demo screenshots and the fictional sample party ("Mina\'s 30th") are AI-generated sample content, not a real event; the app screens themselves are real.',
